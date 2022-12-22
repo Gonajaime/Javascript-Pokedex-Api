@@ -14,13 +14,14 @@ const init = async () => {
 };
 
 const showPoke = (myArray) => {
-  for (const pokemon of myArray) {
-    const myDiv$$ = document.querySelector(".pokemon");
+  const myDiv$$ = document.querySelector(".pokemon");
+  myDiv$$.innerHTML = "";
+  for (const pokemon of myArray) {  
     const newDiv$$ = document.createElement("div");
     newDiv$$.className = "boxpoke";
     newDiv$$.innerHTML = `
             <h4 class = "pokename">${pokemon.name}</h4>
-            <p class="poketype">${pokemon.types[0].type.name}</p>
+            <p class="poketype">${pokemon.types.map((type)=>type.type.name).join("/")}</p>
             <img class= "pokeimg"src="${pokemon.sprites.other.home.front_default}" /> 
             <h4 class = "pokenumber">${pokemon.id}</h4> 
             <h4 class= "pokedata"> ||Peso: ${pokemon.weight}kg  ||

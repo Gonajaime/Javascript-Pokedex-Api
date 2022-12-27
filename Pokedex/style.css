@@ -1,67 +1,88 @@
-*{
-    margin: auto;
-    padding: auto;
+* {
+  margin: auto;
+  padding: auto;
 }
-.searchBox{
-    height: 550px;
-}
-.searchImg{
-    width: 100%;
-
-}
-.searchBar{
-    text-align: center;
-    margin: -24% -1%;
-    width: 100%;
-    transform: rotate(9deg);
+.searchBox {
+    margin-bottom: 40%;
 }
 
-.pokemon{
-    display: flex;
-    flex-wrap: wrap;
+.searchImg {
+  width: 100%;
+}
+.searchBar {
+  text-align: center;
+  margin: -24% -1%;
+  width: 100%;
+  transform: rotate(9deg);
 }
 
-.boxpoke{
-    background-color: navajowhite;
-    height: 21rem;
-    width: 24.5%;
-    border: outset;
-    border-radius: 20%;
-    text-align: center;
-    border-color: lightcoral;
-}
-.boxpoke:hover{
-    background-color: rgb(5, 248, 216);
-    color: darkviolet;
-
+.pokemon {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #8db5e7;
 }
 
-.pokeimg{
-    width: 50%;
-    background-color: seagreen;
-    border-radius: 33%;
+.boxpoke {
+  background-color: navajowhite;
+  position: relative;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  border: outset;
+  border-radius: 20%;
+  text-align: center;
+  border-color: lightcoral;
+  margin-bottom: 2%;
 }
-.pokeimg:hover{
-  background-color:  #5d2e8b;
+.boxpoke:hover {
+  background-color: rgb(5, 248, 216);
+  color: darkviolet;
+  transform: rotateY(180deg);
+}
+.cardB {
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+  position: absolute;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.cardA,
+.CardB {
+  backface-visibility: hidden;
+}
+.pokeimg {
+  width: 50%;
+  background-color: seagreen;
+  border-radius: 33%;
+}
+.pokeimg:hover {
+  background-color: #5d2e8b;
+}
+.imgBack{
+    width: 35%;
 }
 
-.pokename{
+.pokename {
+  font-family: cursive;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+.pokenumber {
+  font-family: fantasy;
+  margin-top: 2%;
+}
+
+.poketype {
+  font-family: fantasy;
+  padding: 3% 0% 10% 0%;
+}
+.pokedata {
+  font-family: sans-serif;
+  text-decoration: underline;
+  margin-top: 5%;
+}
+
+.pokeBase_Stats{
     font-family: cursive;
-    font-size: 2rem;
-    text-transform: uppercase;
-}
-.pokenumber{
-    font-family: fantasy;
-    margin-top: 2%;
-}
-
-.poketype{
-    font-family: fantasy;
-    padding: 3% 0% 10% 0%;
-}
-.pokedata{
-    font-family: sans-serif;
-    text-decoration: underline;
-    margin-top: 5%;
-
+    margin: 0 10%;
 }

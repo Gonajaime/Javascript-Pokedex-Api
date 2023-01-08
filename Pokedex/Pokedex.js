@@ -28,7 +28,7 @@ const showPoke = (myArray) => {
             <h4 class = "pokename">${pokemon.name}</h4>
             <p class="poketype">${pokemon.types
               .map((type) => type.type.name)
-              .join(" / ")}</p>
+              .join(" / ").toUpperCase()}</p>
             <img class= "pokeimg"src="${
               pokemon.sprites.other.home.front_default
             }" /> 
@@ -36,9 +36,9 @@ const showPoke = (myArray) => {
              `;
     cardBack.innerHTML = `<img class= "imgBack"src="${
       pokemon.sprites.other.dream_world.front_default}"/>
-      <h4 class= "pokedata"> ||Peso: ${pokemon.weight}kg  ||
-    Altura: ${pokemon.height} m|| </h4> 
-    <p class="pokeBase_Stats">${pokemon.stats.map((stat)=> stat.stat.name + " = " + stat.base_stat).join(" / ")}</p>
+      <h4 class= "pokedata"> || Peso: ${pokemon.weight / 10} Kg ||
+     Altura: ${pokemon.height / 10} M || </h4> 
+    <p class="pokeBase_Stats">${pokemon.stats.map((stat)=> stat.stat.name + " = " + stat.base_stat).join(" / ").toUpperCase()}</p>
     `;
 
     newDiv$$.appendChild(cardBack);
@@ -46,11 +46,13 @@ const showPoke = (myArray) => {
     newDiv$$.appendChild(cardFront);
   }
 };
+
 const printPokemon = () => {
   const inputPoke = document.querySelector(".searchInput");
   inputPoke.addEventListener("input", () =>
     searchPoke(inputPoke.value, myArray)
   );
+  inputPoke.focus()
 };
 const searchPoke = (filtro, myArray) => {
   const filtering = myArray.filter((pokemon) =>
@@ -60,4 +62,4 @@ const searchPoke = (filtro, myArray) => {
 };
 
 init();
-// newDiv$$.innerHTML = "";
+

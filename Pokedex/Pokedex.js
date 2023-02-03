@@ -28,7 +28,7 @@ const showPoke = (myArray) => {
             <h4 class = "pokename">${pokemon.name}</h4>
             <p class="poketype">${pokemon.types
               .map((type) => type.type.name)
-              .join(" / ")}</p>
+              .join(" / ").toUpperCase()}</p>
             <img class= "pokeimg"src="${
               pokemon.sprites.other.home.front_default
             }" /> 
@@ -55,6 +55,7 @@ const printPokemon = () => {
   inputPoke.addEventListener("input", () =>
     searchPoke(inputPoke.value, myArray)
   );
+  inputPoke.focus()
 };
 const searchPoke = (filtro, myArray) => {
   const filtering = myArray.filter((pokemon) =>
@@ -64,4 +65,4 @@ const searchPoke = (filtro, myArray) => {
 };
 
 init();
-// newDiv$$.innerHTML = "";
+

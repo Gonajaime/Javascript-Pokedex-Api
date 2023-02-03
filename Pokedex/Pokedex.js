@@ -34,11 +34,14 @@ const showPoke = (myArray) => {
             }" /> 
             <h4 class = "pokenumber">${pokemon.id}</h4> 
              `;
-    cardBack.innerHTML = `<img class= "imgBack"src="${
-      pokemon.sprites.other.dream_world.front_default}"/>
-      <h4 class= "pokedata"> ||Peso: ${pokemon.weight}kg  ||
-    Altura: ${pokemon.height} m|| </h4> 
-    <p class="pokeBase_Stats">${pokemon.stats.map((stat)=> stat.stat.name + " = " + stat.base_stat).join(" / ")}</p>
+    cardBack.innerHTML = `<img class= "imgBack"  src="${
+      pokemon.sprites.other.dream_world.front_default
+    }"/> 
+      <h4 class= "pokedata"> || Peso: ${pokemon.weight} Kg  ||
+    Altura: ${pokemon.height/10} M || </h4> 
+    <p class="pokeBase_Stats">${pokemon.stats
+      .map((stat) => stat.stat.name + " = " + stat.base_stat)
+      .join(" / ")}</p>
     `;
 
     newDiv$$.appendChild(cardBack);
@@ -46,6 +49,7 @@ const showPoke = (myArray) => {
     newDiv$$.appendChild(cardFront);
   }
 };
+
 const printPokemon = () => {
   const inputPoke = document.querySelector(".searchInput");
   inputPoke.addEventListener("input", () =>

@@ -33,7 +33,7 @@
   border-color: lightcoral;
   margin-bottom: 2%;
 }
-.boxpoke:hover {
+.boxpoke:active {
   transform: rotateY(180deg);
 }
 .cardB {
@@ -57,7 +57,7 @@
   background-color: seagreen;
   border-radius: 33%;
 }
-.pokeimg:hover {
+.pokeimg:active {
   background-color: #5d2e8b;
 }
 .imgBack{
